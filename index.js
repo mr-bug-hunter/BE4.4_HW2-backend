@@ -49,7 +49,7 @@ async function readAll(){
 app.get("/hotels", async (req, res)=>{
     try{
         const hotel = await readAll()
-        if(hotel.length != 0){
+        if(hotel.length !== 0){
             res.json(hotel)
         }else{
             res.status(400).json({error: "No hotel found."})
